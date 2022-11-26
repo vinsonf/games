@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { PageSelectGameComponent } from './pages/page-select-game/page-select-game.component';
 import { StatusComponent } from './components/status/status.component';
-
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
+console.log(location.href)
+const url = location.href === 'http://localhost:4200/' ? 'http://localhost:3000' : '';
+const config: SocketIoConfig = { url, options: {
   transports: ['websocket'],
   // upgrade: false,
   // reconnection: true,
